@@ -4,10 +4,11 @@ import './App.css';
 import MovieList from './Components/MovieList';
 import MovieListHeading from './Components/MovieListHeading';
 import SearchBox from './Components/SearchBox';
-import AddFavourites from './Components/AddFavourites';
+import AddFavorites from './Components/AddFavorites';
 
  const App = () => {
   const [movies, setMovies] = useState([]);
+  const [favorites, setFavorites] = useState([])
   const [searchValue, setSearchValue] = useState('');
 
         const getMovieRequest = async() => {
@@ -24,6 +25,11 @@ import AddFavourites from './Components/AddFavourites';
         useEffect((searchValue)=>{
           getMovieRequest(searchValue);
         }, [searchValue]);
+
+        const addFavoriteMovie = (movie) => {
+          const newFavoriteList = [...favorites, movie];
+          setFavorites(newFavoriteList);
+        }
   return (
     <div className='container-fluid movie-app'>
       <div className='row d-flex align-items-center mt-4 mb-4'>
@@ -31,7 +37,13 @@ import AddFavourites from './Components/AddFavourites';
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
       </div>
       <div className='row'>
-      <MovieList movies={movies} favouriteComponent={AddFavourites} />
+      <MovieList movies={movies} handleFavoritesClick={addFavoriteMovie} favoriteComponent={AddFavorites} />
+      </div> 
+      <div className='row d-flex align-items-center mt-4 mb-4'>
+        <MovieListHeading heading="Favorites"/>
+      </div>
+      <div className='row'>
+        <MovieList movies={favorites} handleFavoritesClick={addFavoriteMovie} favoriteComponent={AddFavorites} />
       </div> 
     </div>
   )
