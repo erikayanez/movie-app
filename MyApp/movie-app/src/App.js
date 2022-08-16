@@ -1,15 +1,18 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 // Components
 import MovieList from './Components/MovieList';
 
 // Style
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
+
+// Movies are coming from the API
 function App() {
   const [movies, setMovies] = useState([
     {
-
         "Title": "Star Wars",
         "Year": "1977",
         "imdbID": "tt0076759",
@@ -29,12 +32,28 @@ function App() {
         "imdbID": "tt0086190",
         "Type": "movie",
         "Poster": "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"
-    },]);
+    }]);
+
+    const getMovieRequest = async () => {
+      const url = "http://www.omdbapi.com/?s=star wars&apikey=1a0cfd0b"
+
+      const response = await fetch(url);
+      const responseJson = await response.json
+
+      console.log(responseJson);
+    };
+
+    useEffect (()=> {
+      getMovieRequest();
+    }, []);
+
   return (
-    <div className="App">
-      <MovieList movies={movies}/>
+    <div className='container-fluid movie-app'>
+      <div className='row'>
+        <MovieList movies={movies}/>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
