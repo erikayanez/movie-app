@@ -1,6 +1,6 @@
 ## React Movie App
 
-![screenshot of the project](./src/Image/movie-app.png)
+![screenshot of the project]()
 
 ## About the project:
 > This project was created in order to get a better understanding about how to apply React into a project.
