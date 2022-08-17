@@ -13,7 +13,7 @@ import RemoveFavorites from './Components/RemoveFavorites';
   const [searchValue, setSearchValue] = useState('');
 
         const getMovieRequest = async() => {
-          const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=1a0cfd0b`;
+          const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=1a0cfd0b`;
 
           const response = await fetch(url);
           const responseJson =await response.json();
