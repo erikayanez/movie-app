@@ -1,4 +1,4 @@
-## Periodic Table practice
+## React Movie App
 
 ![screenshot of the project](./src/Image/movie-app.png)
 
