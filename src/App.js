@@ -24,13 +24,14 @@ import RemoveFavorites from './Components/RemoveFavorites';
         };
 
 
-        
+
         useEffect((searchValue)=>{
           getMovieRequest(searchValue);
         }, [searchValue]);
 
         useEffect(() => {
-          const movieFavorites = JSON.parse(localStorage.getItem('react-movie-app-favorites'));
+          const movieFavorites = JSON.parse(localStorage.getItem('react-movie-app-favorites')) || [];
+          console.log(movieFavorites)
 
           setFavorites(movieFavorites);
         }, []);
