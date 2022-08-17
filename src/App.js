@@ -54,7 +54,7 @@ import RemoveFavorites from './Components/RemoveFavorites';
   return (
     <div className='container-fluid movie-app'>
       <div className='row d-flex align-items-center mt-4 mb-4'>
-        <MovieListHeading heading="Movie Searcher App"/>
+        <MovieListHeading heading="Movie App"/>
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
       </div>
       <div className='row'>

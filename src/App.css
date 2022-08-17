@@ -1,11 +1,16 @@
 body {
   background-color: #141414;
-  color: white;
+  color: rgb(11, 147, 238);
 }
 
 .movie-app  .row{
   overflow-x: auto;
   flex-wrap: nowrap;
+}
+
+.form-control {
+  font-weight: 900;
+  background-color: rgb(83, 81, 81);
 }
 
 .image-container {
