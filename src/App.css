@@ -1,6 +1,7 @@
 body {
   background-color: #141414;
-  color: rgb(11, 147, 238);
+  background-image: url(./Image/filmframe.jpg);
+  color: rgb(245, 245, 245);
 }
 
 .movie-app  .row{
@@ -29,6 +30,7 @@ body {
 }
 
 .overlay {
+  display: flex;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;

@@ -23,8 +23,6 @@ import RemoveFavorites from './Components/RemoveFavorites';
           }
         };
 
-
-
         useEffect((searchValue)=>{
           getMovieRequest(searchValue);
         }, [searchValue]);
